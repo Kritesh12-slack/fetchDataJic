@@ -18,15 +18,18 @@ export default function App(){
   },[])
   
   return(
-    <section className="w-full flex justify-center items-center p-4">
-      <section className="w-full border-4 grid grid-cols-2">
-        {data && <div className="w-full">
+    <section className="w-full h-screen flex justify-center items-center p-4">
+      <section className="w-full border-4 grid grid-cols-2 p-4">
+        {data && <div className="w-full flex justify-center">
           <img className="max-md:hidden" src={data.results[0].picture.large} alt="" />
           <img className="max-md:block hidden" src={data.results[0].picture.medium} alt="" />
         </div>}
-        <div className="w-full grid grid-cols-1">
-          <div></div>
-        </div>
+        {data && <div className="w-full flex flex-col gap-2">
+          <div className="flex gap-2"><div>{data.results[0].name.first}</div>
+          <div>{data.results[0].name.last}</div></div>
+          <div>{data.results[0].dob.age}</div>
+          <div>{data.results[0].phone}</div>
+        </div>}
       </section>
     </section>
   )
