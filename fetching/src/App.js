@@ -18,8 +18,16 @@ export default function App(){
   },[])
   
   return(
-    <>
-      <h1 className=" text-2xl">Hello World</h1>
-    </>
+    <section className="w-full flex justify-center items-center p-4">
+      <section className="w-full border-4 grid grid-cols-2">
+        {data && <div className="w-full">
+          <img className="max-md:hidden" src={data.results[0].picture.large} alt="" />
+          <img className="max-md:block hidden" src={data.results[0].picture.medium} alt="" />
+        </div>}
+        <div className="w-full grid grid-cols-1">
+          <div></div>
+        </div>
+      </section>
+    </section>
   )
 }
